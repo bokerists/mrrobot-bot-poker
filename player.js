@@ -33,12 +33,18 @@ exports = module.exports = {
         //My Hand Logic
         if (areMyCardsTheSame(mrrobot.cards)) {
             if (isCardFigure(mrrobot.cards[0].rank)) {
-                return bet(allIn/2);
+                return bet(gamestate.callAmount * 10);
             } else {
-                return bet(allIn/3);
+                return bet(gamestate.callAmount * 5);
             }
-        } else if (areCardsDifferentByOne(mrrobot.cards)) {
-            return bet(allIn/3);
+        } else {
+            if (areCardsDifferentByOne(mrrobot.cards)) {
+                return bet(gamestate.callAmount * 3);
+            }
+
+            if(isColor(mrrobot.cards)) {
+              return bet(gamestate.callAmount * 2);
+            }
         }
 
 
