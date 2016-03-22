@@ -20,30 +20,29 @@ exports = module.exports = {
 
         'use strict';
 
-        var allIn = gamestate.players[gamestate.me].chips;
+        var mrrobot = gamestate.players[gamestate.me];
+        var allIn = mrrobot.chips;
 
         //Table Logic 
         if (gamestate.commonCards.length >= 3) {
-            if (isColor(player.cards.concat(gamestate.commonCards))) {
+            if (isColor(mrrobot.cards.concat(gamestate.commonCards))) {
                 return bet(allIn);
             }
         }
 
         //My Hand Logic
-        if (areMyCardsTheSame(player.cards)) {
-            if (isCardFigure(player.cards[0].rank)) {
+        if (areMyCardsTheSame(mrrobot.cards)) {
+            if (isCardFigure(mrrobot.cards[0].rank)) {
                 return bet(allIn/2);
             } else {
                 return bet(allIn/3);
             }
-        } else if (areCardsDifferentByOne(cards)) {
+        } else if (areCardsDifferentByOne(mrrobot.cards)) {
             return bet(allIn/3);
         }
 
-        console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
-
-        return bet(allIn);
+        return bet(gamestate.callAmount);
 
     },
 
