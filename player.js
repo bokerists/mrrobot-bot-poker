@@ -22,11 +22,12 @@ exports = module.exports = {
     'use strict';
 
 
-
+    if(player.cards[0] === player.cards[1])
+      return bet(10)
 
     console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
-    return bet(10);
+    return bet(0);
 
   }
 
