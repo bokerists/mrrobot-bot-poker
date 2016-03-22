@@ -27,11 +27,20 @@ exports = module.exports = {
         
         
         //Table Logic 
+        
+        if(gamestate.commonCards.length >= 1){
+          if(isTwoOfAKind(mrrobot.cards, gamestate.commonCards)){
+            return bet(allIn);
+          }
+        }
+
         if(gamestate.commonCards.length >= 3) {
             if (isColor(mrrobot.cards.concat(gamestate.commonCards))) {
                 return bet(allIn);
             }
         }
+
+
 
         //My Hand Logic
         if (areMyCardsTheSame(mrrobot.cards)) {
@@ -61,6 +70,17 @@ exports = module.exports = {
 
     areMyCardsTheSame: function(cards) {
         return cards[0].rank === cards[1].rank;
+    },
+
+    isTwoOfAKind: function(cards, tableCards){
+      for (var i = cards.length - 1; i >= 0; i--) {
+          for(var j = tableCards.length - 1; j >= 0 ; j--){
+            if (parseCardValue(cards[i]) === parseCardValue(tableCards[j])) {
+                return true;
+            }
+          }
+        }
+        return false;
     },
 
     areCardsDifferentByOne: function(cards) {
