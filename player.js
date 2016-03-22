@@ -28,7 +28,7 @@ exports = module.exports = {
         
         //Table Logic 
         
-        if(gamestate.commonCards.length >= 0){
+        if(gamestate.commonCards.length === 0){
           return bet(gamestate.callAmount);
         }
         
