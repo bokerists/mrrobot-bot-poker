@@ -25,7 +25,7 @@ exports = module.exports = {
         
         
         //Table Logic 
-        if (gamestate.commonCards.length >= 3) {
+        /*if (gamestate.commonCards.length >= 3) {
             if (isColor(mrrobot.cards.concat(gamestate.commonCards))) {
                 return bet(allIn);
             }
@@ -46,7 +46,7 @@ exports = module.exports = {
             if(isColor(mrrobot.cards)) {
               return bet(gamestate.callAmount * 2);
             }
-        }
+        }*/
 
 
         return bet(gamestate.callAmount);
