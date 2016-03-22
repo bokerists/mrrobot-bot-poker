@@ -52,7 +52,7 @@ exports = module.exports = {
 
     parseCardValue: function(card) {
         if (!isCardFigure(card.rank)) {
-            return pareseint(card.rank);
+            return parseint(card.rank);
         } else {
             if (card.rank === 'A') {
                 return 14;
