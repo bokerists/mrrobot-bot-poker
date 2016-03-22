@@ -27,6 +27,8 @@ exports = module.exports = {
             } else {
                 return bet(gamestate.sb * 3);
             }
+        } else if (areCardsDifferentByOne(cards))
+            return bet(gamestate.pot);
         }
 
         console.log(`Currently playing tournament ${gamestate.tournamentId}`);
@@ -41,6 +43,10 @@ exports = module.exports = {
 
     areMyCardsTheSame: function(cards){
       return player.cards[0].rank === player.cards[1].rank;
+    },
+
+    areCardsDifferentByOne: function(cards){
+      return Math.abs(parseint(player.cards[0].rank - player.cards[1].rank)) === 1;
     }
 
 };
