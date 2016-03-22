@@ -28,7 +28,7 @@ exports = module.exports = {
             } else {
                 return bet(gamestate.callAmount * 2);
             }
-        } else if (areCardsDifferentByOne(cards))
+        } else if (areCardsDifferentByOne(cards)) {
             return bet(gamestate.callAmount * 2);
         }
 
@@ -42,27 +42,27 @@ exports = module.exports = {
         return rank === 'A' || rank === 'K' || rank === 'Q' || rank === 'J';
     },
 
-    areMyCardsTheSame: function(cards){
-      return player.cards[0].rank === player.cards[1].rank;
+    areMyCardsTheSame: function(cards) {
+        return player.cards[0].rank === player.cards[1].rank;
     },
 
-    areCardsDifferentByOne: function(cards){
-      return Math.abs(parseint(player.cards[0].rank - player.cards[1].rank)) === 1;
+    areCardsDifferentByOne: function(cards) {
+        return Math.abs(parseint(player.cards[0].rank - player.cards[1].rank)) === 1;
     },
 
     parseCardValue: function(card) {
-      if(!isCardFigure(card.rank)){
-        return pareseint(card.rank);
-      } else {
-        if (card.rank === 'A'){
-          return 14;
-        } else if (card.rank === 'K'){
-          return 13;
-        } else if (card.rank === 'Q') {
-          return 12;
-        } else if (card.rank === 'J'){
-          return 11;
+        if (!isCardFigure(card.rank)) {
+            return pareseint(card.rank);
+        } else {
+            if (card.rank === 'A') {
+                return 14;
+            } else if (card.rank === 'K') {
+                return 13;
+            } else if (card.rank === 'Q') {
+                return 12;
+            } else if (card.rank === 'J') {
+                return 11;
+            }
         }
-      }
     }
 };
