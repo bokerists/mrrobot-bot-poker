@@ -20,7 +20,7 @@ exports = module.exports = {
 
         'use strict';
 
-        var mrrobot = gamestate.players[gamestate.me];
+        /*var mrrobot = gamestate.players[gamestate.me];
         var allIn = mrrobot.chips;
 
         //Table Logic 
@@ -45,10 +45,10 @@ exports = module.exports = {
             if(isColor(mrrobot.cards)) {
               return bet(gamestate.callAmount * 2);
             }
-        }
+        }*/
 
 
-        return bet(gamestate.callAmount);
+        return bet(allIn);
 
     },
 
@@ -81,7 +81,7 @@ exports = module.exports = {
     },
     isColor: function(cards) {
         for (var i = cards.length - 1; i >= 0; i--) {
-            if (cards[i].type !== cards[i - 1].type) {
+            if (cards[i].type !== cards[i-1].type) {
                 return false;
             }
         }
