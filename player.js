@@ -47,7 +47,7 @@ exports = module.exports = {
     },
 
     areCardsDifferentByOne: function(cards) {
-        return Math.abs(parseint(player.cards[0].rank - player.cards[1].rank)) === 1;
+        return Math.abs(parseCardValue(player.cards[0]) - parseCardValue(player.cards[1])) === 1;
     },
 
     parseCardValue: function(card) {
