@@ -23,7 +23,7 @@ exports = module.exports = {
 
         //Table Logic 
         if (gamestate.commonCards.length >= 3) {
-            if (isColor(player.cards)) {
+            if (isColor(player.cards.concat(gamestate.commonCards))) {
                 return bet(gamestate.pot);
             }
         }
