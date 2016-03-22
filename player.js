@@ -23,9 +23,9 @@ exports = module.exports = {
 
         if (areMyCardsTheSame(player.cards)) {
             if (isCardFigure(player.cards[0].rank)) {
-                return bet(500);
+                return bet(gamestate.pot);
             } else {
-                return bet(10);
+                return bet(gamestate.sb * 3);
             }
         }
 
