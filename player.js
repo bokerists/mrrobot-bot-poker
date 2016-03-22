@@ -20,9 +20,10 @@ exports = module.exports = {
 
         'use strict';
 
-        /*var mrrobot = gamestate.players[gamestate.me];
+        var mrrobot = gamestate.players[gamestate.me];
         var allIn = mrrobot.chips;
-
+        
+        /*
         //Table Logic 
         if (gamestate.commonCards.length >= 3) {
             if (isColor(mrrobot.cards.concat(gamestate.commonCards))) {
