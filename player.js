@@ -33,7 +33,7 @@ exports = module.exports = {
 
         console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
-        return bet(0);
+        return bet(gamestate.sb * 2);
 
     },
 
