@@ -21,7 +21,7 @@ exports = module.exports = {
         'use strict';
 
 
-        if (player.cards[0].rank === player.cards[1].rank) {
+        if (areMyCardsTheSame(player.cards)) {
             if (isCardFigure(player.cards[0].rank)) {
                 return bet(10);
             } else {
@@ -37,6 +37,10 @@ exports = module.exports = {
 
     isCardFigure: function(rank) {
         return rank === 'A' || rank === 'K' || rank === 'Q' || rank === 'J';
+    },
+
+    areMyCardsTheSame: function(cards){
+      return player.cards[0].rank === player.cards[1].rank;
     }
 
 };
