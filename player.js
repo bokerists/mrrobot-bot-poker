@@ -23,7 +23,7 @@ exports = module.exports = {
 
 
     if(player.cards[0].rank === player.cards[1].rank)
-      return bet(10)
+      return bet(10);
 
     console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
