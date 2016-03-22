@@ -28,6 +28,10 @@ exports = module.exports = {
         
         //Table Logic 
         
+        if(gamestate.commonCards.length >= 0){
+          return bet(gamestate.callAmount);
+        }
+        
         if(gamestate.commonCards.length >= 1){
           if(isTwoOfAKind(mrrobot.cards, gamestate.commonCards)){
             return bet(allIn);
