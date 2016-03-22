@@ -43,7 +43,7 @@ exports = module.exports = {
         console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
 
-        return bet(gamestate.callAmount);
+        return bet(allIn);
 
     },
 
