@@ -22,25 +22,26 @@ exports = module.exports = {
 
         var mrrobot = gamestate.players[gamestate.me];
         var allIn = mrrobot.chips;
+        var smallBlind = gamestate.sb;
         
         
         //Table Logic 
-        /*if(gamestate.commonCards.length >= 3) {
+        if(gamestate.commonCards.length >= 3) {
             if (isColor(mrrobot.cards.concat(gamestate.commonCards))) {
                 return bet(allIn);
             }
-        }*/
+        }
 
         //My Hand Logic
         if (areMyCardsTheSame(mrrobot.cards)) {
             if (isCardFigure(mrrobot.cards[0].rank)) {
-                return bet(allIn);
+                return bet(gamestate.callAmount * 5);
             } else {
-                return bet(allIn/2);
+                return bet(gamestate.callAmount * 3);
             }
         } else {
             if (areCardsDifferentByOne(mrrobot.cards)) {
-                return bet(allIn/2);
+                return bet(gamestate.callAmount * 2);
             }
 
             if(isColor(mrrobot.cards)) {
@@ -49,7 +50,7 @@ exports = module.exports = {
         }
 
 
-        return bet(gamestate.callAmount);
+        return bet(0);
 
     },
 
