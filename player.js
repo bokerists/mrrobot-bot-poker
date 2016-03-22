@@ -21,6 +21,13 @@ exports = module.exports = {
         'use strict';
 
 
+        //Table Logic 
+        if (gamestate.commonCards.length >= 3) {
+            if (isColor(player.cards)) {
+                return bet(gamestate.pot);
+            }
+        }
+
         //My Hand Logic
         if (areMyCardsTheSame(player.cards)) {
             if (isCardFigure(player.cards[0].rank)) {
@@ -64,5 +71,13 @@ exports = module.exports = {
                 return 11;
             }
         }
+    },
+    isColor: function(cards) {
+        for (var i = cards.length - 1; i >= 0; i--) {
+            if (cards[i].type !== cards[i - 1].type) {
+                return false;
+            }
+        }
+        return true;
     }
 };
