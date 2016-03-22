@@ -23,6 +23,7 @@ exports = module.exports = {
         var mrrobot = gamestate.players[gamestate.me];
         var allIn = mrrobot.chips;
         var smallBlind = gamestate.sb;
+        var pot = gamestate.pot;
         
         
         //Table Logic 
@@ -35,7 +36,7 @@ exports = module.exports = {
         //My Hand Logic
         if (areMyCardsTheSame(mrrobot.cards)) {
             if (isCardFigure(mrrobot.cards[0].rank)) {
-                return bet(gamestate.callAmount * 5);
+                return bet(pot);
             } else {
                 return bet(gamestate.callAmount * 3);
             }
