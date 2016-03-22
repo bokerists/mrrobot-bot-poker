@@ -23,9 +23,9 @@ exports = module.exports = {
 
         if (areMyCardsTheSame(player.cards)) {
             if (isCardFigure(player.cards[0].rank)) {
-                return bet(gamestate.pot);
+                return bet(gamestate.callAmount * 3);
             } else {
-                return bet(gamestate.sb * 3);
+                return bet(gamestate.callAmount * 2);
             }
         } else if (areCardsDifferentByOne(cards))
             return bet(gamestate.pot);
@@ -33,7 +33,7 @@ exports = module.exports = {
 
         console.log(`Currently playing tournament ${gamestate.tournamentId}`);
 
-        return bet(gamestate.sb * 2);
+        return bet(gamestate.callAmount);
 
     },
 
